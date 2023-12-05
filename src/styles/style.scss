@@ -56,3 +56,33 @@ button{
 }:hover{
     opacity: 1;
 }
+
+@media (max-width: 490px){
+    .container-logo{
+        img{
+            width: 120px;
+        }
+    
+    }
+
+    .home{
+        margin-top: 10px;
+        width: 90%;
+        flex-direction: column;
+        border: none;
+        h1{
+            font-size: 19px;
+        }
+        p{
+            font-size: 15px;
+        }
+    }
+    input{
+        width: 90%;
+        margin-bottom: 15px;
+    }
+    button{
+        width: 70%;
+    }
+
+}

@@ -12,12 +12,7 @@ interface UserProfileProps {
 
 const ProfileContainer = styled.div`
   margin-top: 20px;
-  display:flex;
-    justify-content: space-around;
-    align-items:center;
-
   padding: 16px;
-  
 `;
 
 const Avatar = styled.img`

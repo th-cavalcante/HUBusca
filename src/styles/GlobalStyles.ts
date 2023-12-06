@@ -14,7 +14,7 @@ const GlobalStyles = createGlobalStyle`
 
   /* Estilos globais para o aplicativo */
   body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'montserrat';
     background-color: #f4f4f4;
     color: #333;
   }

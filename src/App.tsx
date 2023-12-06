@@ -1,5 +1,6 @@
 // /src/App.tsx
 import React from 'react';
+
 import GlobalStyles from './styles/GlobalStyles';
 import Home from '../pages/Home'
 
@@ -13,10 +14,22 @@ const App: React.FC = () => {
   return (
     <>
       <GlobalStyles />
-      <div className='container-logo'><img src={Logo} alt="logo" /></div>
+     
+      <header>
+        <img src={Logo} alt="logo" />
+        <select name="" id="">
+          <option value="">Buscas recentes</option>
+        </select>
+      </header>
+     
   
       < Home />
-      
+
+      <footer>
+        <p>Desenvolvido por <span>ThiagoFernandes</span></p>
+      </footer>
+    
+        
     </>
   );
 };

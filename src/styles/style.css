@@ -1,15 +1,29 @@
-.container-logo {
+header {
   background-color: #633EBB;
   position: fixed;
   width: 100%;
   z-index: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: end;
 }
-.container-logo img {
+header img {
   width: 200px;
+  margin-left: 350px;
+}
+header select {
+  margin-bottom: 20px;
+  height: 33px;
+  width: 150px;
+  border: 2px solid rgb(216, 215, 215);
+  border-radius: 20px;
+  padding: 5px;
+  font-family: "montserrat";
+  outline: none;
 }
 
 .home {
-  margin-top: 50px;
+  margin-top: 30px;
   border: 1px solid #633EBB;
   padding: 10px;
   width: 600px;
@@ -57,9 +71,45 @@ button {
   opacity: 1;
 }
 
+footer {
+  background-color: #633EBB;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: #fff;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer p {
+  font-size: 14px;
+}
+footer p span {
+  font-weight: bold;
+  color: rgb(178, 241, 83);
+}
+
 @media (max-width: 490px) {
-  .container-logo img {
-    width: 120px;
+  header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+  }
+  header img {
+    width: 90px;
+    margin-left: 0px;
+  }
+  header select {
+    margin-bottom: 0px;
+    height: 33px;
+    width: 200px;
+    border: 2px solid rgb(216, 215, 215);
+    border-radius: 20px;
+    padding: 5px;
+    font-family: "montserrat";
+    outline: none;
   }
   .home {
     margin-top: 10px;

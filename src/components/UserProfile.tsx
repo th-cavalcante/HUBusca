@@ -24,17 +24,18 @@ const Avatar = styled.img`
 `;
 
 const UserProfile: React.FC<UserProfileProps> = ({ avatarUrl, name, login, location }) => {
+  console.log({ avatarUrl, name, login, location });
   return (
+   
     <ProfileContainer>
       
       <Avatar src={avatarUrl} alt={login} />
-      <div>
-        
+      <>
         <h2>{name}</h2>
-        <p>{login}</p>
-        <p>Location: {location}</p>
+        <p>Login: {login}</p>
+        <p>Localização: {location}</p>
         {/* Adicione mais informações conforme necessário */}
-      </div>
+      </>
     </ProfileContainer>
   );
 };

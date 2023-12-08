@@ -1,15 +1,15 @@
 header {
   background-color: #633EBB;
-  position: fixed;
   width: 100%;
-  z-index: 1;
   display: flex;
   justify-content: space-around;
   align-items: end;
 }
 header img {
-  width: 200px;
-  margin-left: 350px;
+  width: 150px;
+  margin-left: 400px;
+
+  
 }
 header select {
   margin-bottom: 20px;
@@ -24,17 +24,12 @@ header select {
 
 .home {
   margin-top: 30px;
-  border: 1px solid #633EBB;
-  padding: 10px;
-  width: 600px;
+  padding: 5px;
   border-radius: 30px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  text-align: center;
 }
 .home h1 {
-  font-size: 30px;
+  font-size: 20px;
   padding-bottom: 20px;
   color: #633EBB;
 }
@@ -77,13 +72,13 @@ footer {
   bottom: 0;
   width: 100%;
   color: #fff;
-  height: 30px;
+  height: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 footer p {
-  font-size: 14px;
+  font-size: 11px;
 }
 footer p span {
   font-weight: bold;

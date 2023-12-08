@@ -18,12 +18,10 @@ const GlobalStyles = createGlobalStyle`
     background-color: #f4f4f4;
     color: #333;
   }
-  h1{
-    color: red;
-  }
+ 
 
    h1, h2, h3, h4, h5, h6 {
-    color: #007bff; 
+    color: #633EBB; 
     
   }
  

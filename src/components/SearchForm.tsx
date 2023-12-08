@@ -1,10 +1,8 @@
-// /src/components/SearchForm.tsx
 import React, { useState } from 'react';
-
 import '../styles/style.css';
 
 interface SearchFormProps {
-  onSearch: (username: string) => void; // Modificado para aceitar um nome de usuário (string)
+  onSearch: (username: string) => void;
 }
 
 const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
@@ -12,7 +10,17 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
+
+    // Chama a função de busca
     onSearch(username);
+
+    // Adiciona o username ao localStorage
+    const recentSearches = JSON.parse(localStorage.getItem('recentSearches') || '[]');
+    const updatedSearches = [...recentSearches, username];
+    localStorage.setItem('recentSearches', JSON.stringify(updatedSearches));
+
+    // Limpa o input após a busca
+    setUsername('');
   };
 
   return (

@@ -18,6 +18,15 @@ const ProfileContainer = styled.div`
     font-size: 14px;
     color: red;
   }
+  .title-info-details-user{
+    color:red;
+    font-weight:bold;
+    span{
+      text-transform:uppercase;
+      color:#633ebb;
+    }
+
+  }
   h1 {
     color: red;
   }
@@ -28,6 +37,8 @@ const ProfileContainer = styled.div`
     border: 1px solid #ccc;
     border-radius: 8px;
     display: none;
+
+    
   }
 
   .show-repo {
@@ -71,6 +82,12 @@ const UserProfile: React.FC<UserProfileProps> = ({
     setIsRepoVisible((prev) => !prev);
   };
 
+  const openGitHubRepo = (repoName: string) => {
+    // Certifique-se de que a URL começa com 'https://github.com/'
+    const githubUrl = `https://github.com/${login}/${repoName}`;
+    window.open(githubUrl, '_blank');
+  };
+
   useEffect(() => {
     const fetchUserRepos = async () => {
       if (repositories) {
@@ -105,7 +122,11 @@ const UserProfile: React.FC<UserProfileProps> = ({
           <ul>
             {userRepos.map((repo) => (
               <li key={repo.name}>
-                <strong >Nome:</strong> <p className='show-repo'>{repo.name}</p>  <br />
+                <strong>Nome:</strong>
+                <p className='show-repo' onClick={() => openGitHubRepo(repo.name)}>
+                  {repo.name}
+                </p>
+                <br />
                 <strong>ID:</strong> {repo.id} <br />
                 <strong>Linguagem:</strong> {repo.language} <br />
                 <strong>Descrição:</strong> {repo.description} <br />
@@ -123,4 +144,3 @@ const UserProfile: React.FC<UserProfileProps> = ({
 };
 
 export default UserProfile;
-

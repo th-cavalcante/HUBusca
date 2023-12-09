@@ -19,11 +19,15 @@ const ProfileContainer = styled.div`
     color: red;
   }
   .title-info-details-user{
+    padding-top:10px;
+    background:red;
     color:red;
     font-weight:bold;
+    color:#fff;
+    border-radius: 10px;
     span{
       text-transform:uppercase;
-      color:#633ebb;
+      
     }
 
   }
@@ -115,6 +119,7 @@ const UserProfile: React.FC<UserProfileProps> = ({
 
       <div className={`all-details-user ${isRepoVisible ? 'visible' : ''}`}>
         <h3>Informações Adicionais:</h3>
+        <p className='title-info-details-user'>Clique no <span>Nome</span> do repositório para abrir no GitHub.</p>
         <p>Seguidores: {followers}</p>
 
         <h3>Repositórios:</h3>

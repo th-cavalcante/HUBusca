@@ -15,6 +15,7 @@ export interface User {
 export interface Repo {
   name: string;
   language: string;
+  id: number;
   description: string;
   created_at: string;
   pushed_at: string;

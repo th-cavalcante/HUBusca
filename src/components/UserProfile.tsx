@@ -1,5 +1,3 @@
-// /src/components/UserProfile.tsx
-
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { getUserRepos, Repo } from '../utils/api';
@@ -10,7 +8,7 @@ interface UserProfileProps {
   login: string;
   location: string;
   followers: number;
-  repositories: Repo[] | undefined; // Alterado para aceitar undefined
+  repositories: Repo[] | undefined;
 }
 
 const ProfileContainer = styled.div`
@@ -24,11 +22,22 @@ const ProfileContainer = styled.div`
     color: red;
   }
 
-  .all-details-user {
+  .all-details-user.visible {
+    display: block;
     margin-top: 20px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
+    display: none; /* Inicie com display: none; */
+  }
+
+  .show-repo {
+    color: #fff;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #633ebb;
+    cursor: pointer;
   }
 `;
 
@@ -48,13 +57,18 @@ const UserProfile: React.FC<UserProfileProps> = ({
   repositories,
 }) => {
   const [userRepos, setUserRepos] = useState<Repo[]>([]);
-  
+  const [isRepoVisible, setIsRepoVisible] = useState(false);
+
+  const toggleRepoVisibility = () => {
+    setIsRepoVisible((prev) => !prev);
+  };
+
   useEffect(() => {
     const fetchUserRepos = async () => {
       if (repositories) {
         console.log('repositories:', repositories);
 
-        const repos = await Promise.all(repositories.map(repo => getUserRepos(repo.url)));
+        const repos = await Promise.all(repositories.map((repo) => getUserRepos(repo.url)));
         console.log('repos:', repos);
         setUserRepos(repos.flat());
       }
@@ -65,14 +79,16 @@ const UserProfile: React.FC<UserProfileProps> = ({
 
   return (
     <ProfileContainer>
-      <p className='info-user'>Clique na foto para acessar mais informações do usuário.</p>
-      <Avatar src={avatarUrl} alt={login} />
+      <p className='info-user' onClick={toggleRepoVisibility}>
+        Clique na foto para acessar mais informações do usuário.
+      </p>
+      <Avatar src={avatarUrl} alt={login} onClick={toggleRepoVisibility} />
 
       <h2>{name}</h2>
       <p>Login: {login}</p>
       <p>Localização: {location}</p>
 
-      <div className='all-details-user'>
+      <div className={`all-details-user ${isRepoVisible ? 'visible' : ''}`}>
         <h3>Informações Adicionais:</h3>
         <p>Seguidores: {followers}</p>
 
@@ -81,7 +97,8 @@ const UserProfile: React.FC<UserProfileProps> = ({
           <ul>
             {userRepos.map((repo) => (
               <li key={repo.name}>
-                <strong>Nome:</strong> {repo.name} <br />
+                <strong className='show-repo'>Nome:</strong> {repo.name} <br />
+                <strong>ID:</strong> {repo.id} <br />
                 <strong>Linguagem:</strong> {repo.language} <br />
                 <strong>Descrição:</strong> {repo.description} <br />
                 <strong>Criado em:</strong> {repo.created_at} <br />
@@ -98,4 +115,3 @@ const UserProfile: React.FC<UserProfileProps> = ({
 };
 
 export default UserProfile;
-

@@ -1,5 +1,4 @@
 import axios, { AxiosResponse } from 'axios';
-const GITHUB_ACCESS_TOKEN = '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';
 
 
 export interface User {
@@ -24,9 +23,7 @@ export interface Repo {
 
 const githubApi = axios.create({
   baseURL: 'https://api.github.com',
-  headers: {
-    Authorization: `Bearer ${GITHUB_ACCESS_TOKEN}`,
-  },
+ 
 });
 
 export const searchUser = async (username: string): Promise<User> => {

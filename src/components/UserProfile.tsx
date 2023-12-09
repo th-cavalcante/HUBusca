@@ -44,6 +44,10 @@ const ProfileContainer = styled.div`
   }:hover{
     opacity: 1;
   }
+  @media (max-width: 490px){
+    .show-repo {
+      width:auto;
+  }
 `;
 
 const Avatar = styled.img`

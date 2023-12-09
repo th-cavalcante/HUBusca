@@ -1,5 +1,5 @@
 header {
-  background-color: #633EBB;
+  background-color: #010409;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -20,21 +20,28 @@ header select {
   outline: none;
 }
 
+#btn-search {
+  background-color: #010409;
+}
+
 .home {
-  margin: auto;
+  background-color: #161B22;
+  margin: 0 auto;
   margin-top: 30px;
-  padding: 5px;
+  padding: 30px;
   border-radius: 30px;
   text-align: center;
+  width: 600px;
 }
 .home h1 {
   font-size: 20px;
   padding-bottom: 20px;
-  color: #633EBB;
+  color: #fff;
 }
 .home p {
   font-size: 18px;
   padding-bottom: 20px;
+  color: #fff;
 }
 
 input {
@@ -46,7 +53,7 @@ input {
 }
 
 :focus {
-  border: 2px solid #633EBB;
+  border: 2px solid #388BFD;
 }
 
 button {
@@ -54,7 +61,7 @@ button {
   width: 100px;
   border-radius: 10px;
   border: none;
-  background-color: #633EBB;
+  background-color: #388BFD;
   color: #fff;
   cursor: pointer;
   margin-left: 10px;
@@ -66,7 +73,7 @@ button {
 }
 
 footer {
-  background-color: #633EBB;
+  background-color: #010409;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -81,7 +88,7 @@ footer p {
 }
 footer p span {
   font-weight: bold;
-  color: rgb(178, 241, 83);
+  color: #388BFD;
 }
 
 @media (max-width: 490px) {

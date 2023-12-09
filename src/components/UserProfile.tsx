@@ -22,15 +22,16 @@
       color: red;
     }
     .title-info-details-user{
-      margin-top:10px;
+      margin-top:px;
       padding-top:15px;
-      background:#121E2F;
-      width: 400px;
+      background:#fff;
+      width: 450px;
       margin:auto;
       color:red;
       font-weight:bold;
-      color:#fff;
+      color:red;
       border-radius: 10px;
+      font-size:15px;
       span{
         text-transform:uppercase;
         
@@ -40,6 +41,12 @@
     h1 {
       color: red;
     }
+    h2,h3{
+      color:#388BFD;
+    }
+     strong{
+        color:#fff;
+      }
 
     .all-details-user.visible {
       margin-top: 20px;
@@ -47,6 +54,7 @@
       border: 1px solid #ccc;
       border-radius: 8px;
       display: none;
+     
 
       
     }
@@ -56,7 +64,7 @@
       border-radius: 5px;
       padding-left: 10px;
       padding-right: 10px;
-      background-color: #633ebb;
+      background-color: #388BFD;
       cursor: pointer;
       width:300px;
       margin:auto;

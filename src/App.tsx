@@ -37,7 +37,7 @@ const App: React.FC = () => {
             </option>
           ))}
         </select>
-        <button onClick={handleSearchClick}></button>
+        <button id='btn-search' onClick={handleSearchClick} ></button>
       </header>
 
       <Home onRecentSearch={handleRecentSearch} selectedUsername={selectedUsername} />

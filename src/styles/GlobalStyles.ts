@@ -10,12 +10,13 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     text-align:center;
+    color:#fff;
   }
 
   /* Estilos globais para o aplicativo */
   body {
     font-family: 'montserrat';
-    background-color: #f4f4f4;
+    background-color: #0D1117;
     color: #333;
   }
  

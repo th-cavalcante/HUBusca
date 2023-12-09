@@ -2,8 +2,11 @@ import React, { useState, useEffect, useCallback } from 'react';
 import SearchForm from '../src/components/SearchForm';
 import UserProfile from '../src/components/UserProfile';
 import { searchUser, User } from '../src/utils/api';
+import '../src/styles/style.css';
 
 import '../src/styles/style.css';
+
+
 
 interface HomeProps {
   onRecentSearch: (username: string) => void;

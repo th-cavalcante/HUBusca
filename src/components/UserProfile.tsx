@@ -34,10 +34,14 @@ const ProfileContainer = styled.div`
   .show-repo {
     color: #fff;
     border-radius: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
     background-color: #633ebb;
     cursor: pointer;
+    width:300px;
+    margin: auto;
+    height: 9px;
+    opacity: 0.8;
+  }:hover{
+    opacity: 1;
   }
 `;
 
@@ -97,7 +101,7 @@ const UserProfile: React.FC<UserProfileProps> = ({
           <ul>
             {userRepos.map((repo) => (
               <li key={repo.name}>
-                <strong className='show-repo'>Nome:</strong> {repo.name} <br />
+                <strong >Nome:</strong> <p className='show-repo'>{repo.name}</p>  <br />
                 <strong>ID:</strong> {repo.id} <br />
                 <strong>Linguagem:</strong> {repo.language} <br />
                 <strong>Descrição:</strong> {repo.description} <br />

@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 
 // Substitua com seu token GitHub
-const GITHUB_ACCESS_TOKEN = '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';
+const GITHUB_ACCESS_TOKEN = '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';
 
 const githubApi = axios.create({
   baseURL: 'https://api.github.com',

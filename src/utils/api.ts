@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-
+const GITHUB_ACCESS_TOKEN = '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';
 
 export interface User {
   name: string;
@@ -23,6 +23,10 @@ export interface Repo {
 
 const githubApi = axios.create({
   baseURL: 'https://api.github.com',
+  headers: {
+    Authorization: `Bearer ${GITHUB_ACCESS_TOKEN}`,
+    
+  },
  
 });
 

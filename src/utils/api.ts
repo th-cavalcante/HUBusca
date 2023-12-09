@@ -1,5 +1,3 @@
-// /src/utils/api.ts
-
 import axios, { AxiosResponse } from 'axios';
 const GITHUB_ACCESS_TOKEN = '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';
 

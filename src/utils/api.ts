@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-const GITHUB_ACCESS_TOKEN = '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';
+const GITHUB_ACCESS_TOKEN = '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';
 
 
 export interface User {

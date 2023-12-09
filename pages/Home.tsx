@@ -21,7 +21,7 @@ const Home: React.FC<HomeProps> = ({ onRecentSearch }) => {
       onRecentSearch(username);
       console.log('userData:', data);
     } catch (error) {
-      console.error('Erroo ao buscar usuário:', error);
+      console.error('Erro ao buscar usuário:', error);
     } finally {
       setLoading(false);
     }

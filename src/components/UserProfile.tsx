@@ -10,7 +10,7 @@ interface UserProfileProps {
   login: string;
   location: string;
   followers: number;
-  repositories: Repo[];
+  repositories: Repo[] | undefined; // Alterado para aceitar undefined
 }
 
 const ProfileContainer = styled.div`
@@ -48,15 +48,14 @@ const UserProfile: React.FC<UserProfileProps> = ({
   repositories,
 }) => {
   const [userRepos, setUserRepos] = useState<Repo[]>([]);
-
+  
   useEffect(() => {
     const fetchUserRepos = async () => {
       if (repositories) {
-        const repoUrls = repositories.map(repo => repo.repos_url);
-        console.log('repositories:', repositories);  
-        
-        const repos = await Promise.all(repoUrls.map(url => getUserRepos(url)));
-        console.log('repos:', repos)
+        console.log('repositories:', repositories);
+
+        const repos = await Promise.all(repositories.map(repo => getUserRepos(repo.url)));
+        console.log('repos:', repos);
         setUserRepos(repos.flat());
       }
     };

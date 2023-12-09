@@ -9,6 +9,7 @@ export interface User {
   location: string;
   followers: number;
   repos_url: string;
+  repositories?: Repo[];
 }
 
 export interface Repo {
@@ -17,6 +18,7 @@ export interface Repo {
   description: string;
   created_at: string;
   pushed_at: string;
+  url: string;
 }
 
 const githubApi = axios.create({
@@ -24,13 +26,16 @@ const githubApi = axios.create({
 });
 
 export const searchUser = async (username: string): Promise<User> => {
-  const response: AxiosResponse<User> = await githubApi.get(`/users/${username}`);
-  return response.data;
+  const userResponse: AxiosResponse<User> = await githubApi.get(`/users/${username}`);
+  const reposResponse: AxiosResponse<Repo[]> = await githubApi.get(userResponse.data.repos_url);
 
-  
+  const user: User = userResponse.data;
+  user.repositories = reposResponse.data;
 
-  
+  return user;
 };
+
+
 
 export const getUserRepos = async (repos_url: string): Promise<Repo[]> => {
   const response: AxiosResponse<Repo[]> = await githubApi.get(repos_url);

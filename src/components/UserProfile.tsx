@@ -23,7 +23,7 @@ const ProfileContainer = styled.div`
   }
 
   .all-details-user.visible {
-    display: block;
+    display:block;
     margin-top: 20px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -34,11 +34,12 @@ const ProfileContainer = styled.div`
   .show-repo {
     color: #fff;
     border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
     background-color: #633ebb;
     cursor: pointer;
     width:300px;
-    margin: auto;
-    height: 9px;
+    margin:auto;
     opacity: 0.8;
   }:hover{
     opacity: 1;
@@ -119,3 +120,4 @@ const UserProfile: React.FC<UserProfileProps> = ({
 };
 
 export default UserProfile;
+

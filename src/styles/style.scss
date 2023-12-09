@@ -30,7 +30,7 @@ header{
 .home{
    
     background-color: #161B22;
-    margin:0 auto;
+    margin: auto;
     margin-top: 30px;
     padding: 30px;
     border-radius: 30px;
@@ -120,7 +120,7 @@ footer{
 
     .home{
         margin-top: 10px;
-        width: 90%;
+        width: 80%;
         flex-direction: column;
         border: none;
         h1{
@@ -131,7 +131,7 @@ footer{
         }
     }
     input{
-        width: 90%;
+        width: 100%;
         margin-bottom: 15px;
     }
     button{

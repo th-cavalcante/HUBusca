@@ -23,12 +23,11 @@ const ProfileContainer = styled.div`
   }
 
   .all-details-user.visible {
-    display:block;
     margin-top: 20px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    display: none; /* Inicie com display: none; */
+    display: none;
   }
 
   .show-repo {
@@ -66,7 +65,7 @@ const UserProfile: React.FC<UserProfileProps> = ({
   repositories,
 }) => {
   const [userRepos, setUserRepos] = useState<Repo[]>([]);
-  const [isRepoVisible, setIsRepoVisible] = useState(false);
+  const [isRepoVisible, setIsRepoVisible] = useState(true);
 
   const toggleRepoVisibility = () => {
     setIsRepoVisible((prev) => !prev);

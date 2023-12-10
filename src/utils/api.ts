@@ -1,9 +1,16 @@
 import axios, { AxiosResponse } from 'axios';
+import dotenv from 'dotenv';
+dotenv.config();
+
+// Substitua com seu token GitHub
+const GITHUB_ACCESS_TOKEN = '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';
 
 
 const githubApi = axios.create({
   baseURL: 'https://api.github.com',
-
+  headers: {
+    Authorization: `Bearer ${GITHUB_ACCESS_TOKEN}`,
+  },
 });
 
 export interface User {

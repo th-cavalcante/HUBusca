@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+.gitignore
+
+Arquivos do ambiente (.env)
+.env

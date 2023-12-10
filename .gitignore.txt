@@ -1,4 +1,0 @@
-# .gitignore
-
-# Arquivos do ambiente (.env)
-.env

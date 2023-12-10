@@ -1,9 +1,13 @@
 import axios, { AxiosResponse } from 'axios';
 
+const GITHUB_ACCESS_TOKEN = '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';
+
 
 const githubApi = axios.create({
   baseURL: 'https://api.github.com',
- 
+  headers: {
+    Authorization: `Bearer ${GITHUB_ACCESS_TOKEN}`,
+  },
 });
 
 export interface User {
